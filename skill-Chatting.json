@@ -1,0 +1,305 @@
+{
+  "intents": [
+    {
+      "intent": "AboutControl",
+      "examples": [
+        {
+          "text": "how can I control the robot?"
+        },
+        {
+          "text": "what does that means?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "AboutRobot",
+      "examples": [
+        {
+          "text": "robot?"
+        },
+        {
+          "text": "What is a robot?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "AboutWebsite",
+      "examples": [
+        {
+          "text": "how this website works?"
+        },
+        {
+          "text": "what is this website?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "AnythingElse",
+      "examples": [
+        {
+          "text": "bye"
+        },
+        {
+          "text": "Ok"
+        },
+        {
+          "text": "okay"
+        },
+        {
+          "text": "see you later"
+        },
+        {
+          "text": "Thank you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Question",
+      "examples": [
+        {
+          "text": "Can I ask you something?"
+        },
+        {
+          "text": "I have a question"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Welcoming",
+      "examples": [
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hola"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    },
+    "from-sample": true
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_8_1626611449346",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "anythingelse",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You are Welcome!"
+              },
+              {
+                "text": "bye"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#AnythingElse",
+      "dialog_node": "node_10_1626613385747",
+      "previous_sibling": "Anything else"
+    },
+    {
+      "type": "standard",
+      "title": "Welcoming",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi there I'm Dalz!\nWhat can I help you with?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Welcoming",
+      "dialog_node": "node_8_1626611449346",
+      "previous_sibling": "node_9_1626612129810"
+    },
+    {
+      "type": "standard",
+      "title": "aboutWebsite",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This website will make you control the robot movement online.\nIt's that simple!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#AboutWebsite",
+      "dialog_node": "node_8_1626612657763",
+      "previous_sibling": "node_9_1626612827272"
+    },
+    {
+      "type": "standard",
+      "title": "Questions ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes sure!"
+              },
+              {
+                "text": "Ask me!"
+              },
+              {
+                "text": "Of course, I'm here to help"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#Question",
+      "dialog_node": "node_9_1626612129810",
+      "previous_sibling": "node_9_1626612441050"
+    },
+    {
+      "type": "standard",
+      "title": "aboutRobot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "A robot is a programmable machine which is capable of doing complex tasks automatically with precision and efficiency. The robots can be guided by external or internal input to perform any work.\n\nA robot can be designed as resembled as human or it can be designed as a standard machine look alike."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "Robot",
+            "source": "https://images.wsj.net/im-361645?width=1280&size=1",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#AboutRobot",
+      "dialog_node": "node_9_1626612441050",
+      "previous_sibling": "node_8_1626612657763"
+    },
+    {
+      "type": "standard",
+      "title": "aboutControl",
+      "output": {
+        "generic": [
+          {
+            "response_type": "channel_transfer",
+            "transfer_info": {
+              "target": {
+                "chat": {
+                  "url": "https://bandar-abusinn.github.io/EngineMovmentRobot/Movement.html?"
+                }
+              }
+            },
+            "message_to_user": "Ok, basically this website will have 4 direction buttons and a stop button when you press any of them it will activate and move the robot."
+          }
+        ]
+      },
+      "conditions": "#AboutControl",
+      "dialog_node": "node_9_1626612827272",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Chatting",
+  "language": "en",
+  "description": ""
+}
