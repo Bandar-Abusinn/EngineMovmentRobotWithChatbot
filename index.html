@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="CSS/HomepageDesign.css">
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <h1>Hello There! <br>
+        Robot Home page </h1>
+
+
+    <div>
+        <h3>Please choose what you want</h3>
+        <form action="Arm.html" method="get">
+            <input class="ib" type="submit" value="Enginge values">
+        </form>
+
+        <br>
+
+        <form action="Movement.html" method="get">
+            <input class="ib" type="submit" value="Robot directions">
+        </form>
+    </div>
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "6a233ccd-18c0-491e-a105-03489403573b", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "2342ed17-ecf4-4c62-9d14-8c9dad61000b", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+</body>
+</html>

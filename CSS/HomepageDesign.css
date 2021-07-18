@@ -1,0 +1,98 @@
+ body {
+     background-image: url('../Photo/Robothomepage.jpg');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: 100% 100%;
+ }
+
+
+ div {
+     text-align: center;
+     color: ghostwhite;
+     padding: 20px 44px;
+     font-size: 20px;
+
+ }
+
+ div {
+
+     background-color: midnightblue;
+     width: 25%;
+     height: 25%;
+     margin: auto;
+ }
+
+ h1 {
+
+     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+     font-family: sans;
+     color: white;
+     text-align: center;
+ }
+
+ h2 {
+
+     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+     font-family: sans;
+     color: white;
+     text-align: center;
+ }
+
+h3 {
+
+     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+     font-family: sans;
+     color: white;
+     text-align: center;
+ }
+div {
+     text-align: center;
+     color: black;
+     padding: 20px 44px;
+     font-size: 20px;
+
+ }
+
+
+
+ div {
+
+     background-color: cadetblue;
+     width: 25%;
+     height: 25%;
+     margin: auto;
+ }
+
+
+
+
+ h1 {
+    
+     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+     font-family: sans;
+     color: cadetblue;
+     text-align: center;
+ }
+
+
+
+ h3 {
+    
+     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+     font-family: sans;
+     color: white;
+     text-align: center;
+ }
+
+
+ .ib {
+     text-align: center;
+     border-radius: 15px;
+     border-color: blue;
+     color: rgb(132, 165, 237);
+     background-color: black;
+     font-size: 1.3em;
+     width: 250px;
+     height: 55px;
+     color: white;
+ }
